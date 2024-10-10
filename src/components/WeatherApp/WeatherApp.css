@@ -1,0 +1,69 @@
+.WeatherApp{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(to top, rgb(78, 142, 190), rgb(34, 34, 34));
+}
+.WeatherApp .weatherAppCard{
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('https://img.freepik.com/premium-vector/sky-clouds-design-with-flat-cartoon-poster-flyers-postcards-web-banners_771576-58.jpg');
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+.WeatherApp .weatherAppCard::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    background:linear-gradient(to bottom, rgba(0, 0, 255, 0.339) 70%, rgba(128, 0, 128, 0.55));
+    z-index: -1;
+}
+.WeatherApp .weatherAppCard .input{
+    width: 70%;
+    position: relative;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    background-color: #ccc;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.WeatherApp .weatherAppCard .input input{
+    background-color: transparent;
+    color: #000;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+}
+.WeatherApp .weatherAppCard .input button{
+    all: initial;
+    position: absolute;
+    right: 10px;
+    color: black;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* --------------- result container --------------- */
+.resultContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    text-align: center;
+}
+.resultContainer .temperature{
+    font-size: 40px;
+    font-weight: bold;
+    width: fit-content;
+}

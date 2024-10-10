@@ -1,0 +1,95 @@
+/* .Calendar{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.monthContainer{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+}
+.dateBox{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+} */
+
+
+
+.calendar {
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    border: 6px groove black;
+    border-top-style: dotted;
+    padding: 10px;
+    padding-top: 30px;
+    border-radius: 20px;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .calendar-header button{
+    background-color: transparent;
+    color: #000000;
+    text-decoration: underline;
+    border: 1px solid #ccc;
+  }
+  .calendar-header button:hover{
+    color: #ffffff;
+  }
+  .day-names{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  .dayName{
+    /* width: 70px; */
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  .calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  
+  .calendar-day {
+    /* width: 70px; */
+    height: 70px;
+    border: 1px solid #ccc;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+  .calendar-day-task{
+    position: relative;
+    cursor: pointer;
+    background-color: rgba(211, 2, 92, 0.235);
+  }
+  .calendar-day-task i{
+    color: green;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 12px;
+  }
+  
+  .empty {
+    background-color: transparent; /* Optional: Make empty days lighter */
+  }
+  

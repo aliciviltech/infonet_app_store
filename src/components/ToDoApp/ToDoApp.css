@@ -1,0 +1,115 @@
+.ToDoApp{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: rgb(240, 152, 115); */
+}
+
+/* -------------- input area ------------- */
+.ToDoApp .inputArea{
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f0d9c5;
+    border-radius: 10px;
+}
+.ToDoApp .inputArea input{
+    font-size: 16px;
+    background-color: transparent;
+    height: 40px;
+    color: #000;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    outline: none;
+}
+.ToDoApp .inputArea .dateInputContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.ToDoApp .inputArea .dateInputContainer img{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.ToDoApp .inputArea input[type='datetime-local']{
+    width: fit-content;
+    color: #000;
+    background-color: #ccc;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+#updateBtn{
+    display: none;
+}
+#cancelBtn{
+    background-color: brown;
+    display: none;
+}
+
+/* -------------- task list ------------- */
+.ToDoApp .tasksContainer{
+    width: 900px;
+}
+.ToDoApp .tasksContainer .taskList{
+    width: 600px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.ToDoApp .tasksContainer .taskList .item{
+    display: flex;
+    /* align-items: center; */
+    gap: 10px;
+    flex-wrap: wrap;
+    bac
+}
+.ToDoApp .tasksContainer .taskList .item .taskNumber{
+    background-color: rgb(211, 2, 93);
+    color: #ffffff;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.ToDoApp .tasksContainer .taskList .item .task{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.ToDoApp .progressBar{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.ToDoApp .tasksContainer .taskList .item .controls{
+    display: flex;
+    gap: 20px;
+}
+.ToDoApp .tasksContainer .taskList .item .progressInput{
+    display: none;
+}
+.deactivate{
+    opacity: 0.3;
+}
+.goToCalendarBtn{
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.goToCalendarBtn img{
+    width: 30px;
+    border-radius: 7px
+}

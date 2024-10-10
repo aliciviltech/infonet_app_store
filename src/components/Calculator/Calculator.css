@@ -1,0 +1,69 @@
+.CalculatorContainer{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Calculator {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to top, rgb(180, 179, 179) 90%, rgba(59, 59, 59, 0.399)),
+        linear-gradient(to bottom, rgb(180, 179, 179) 90%, rgba(59, 59, 59, 0.399)),
+        linear-gradient(to left, rgb(180, 179, 179) 90%, rgba(59, 59, 59, 0.399)),
+        linear-gradient(to right, rgb(180, 179, 179) 90%, rgba(59, 59, 59, 0.399));
+    
+    border-radius: 10px;
+}
+
+.Calculator .inputArea {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(25, 39, 32);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+}
+
+.Calculator .inputArea input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: rgb(0, 255, 132);
+}
+
+.Calculator .inputArea .result {
+    align-self: flex-end;
+    margin-top: auto;
+    cursor: pointer;
+    color: rgb(124, 124, 237);
+}
+
+.Calculator .buttonArea {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.Calculator .buttonArea button {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 2px 2px 4px #000;
+}
+.Calculator .buttonArea button:active{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.Calculator .buttonArea #equal {
+    width: 100px;
+}
