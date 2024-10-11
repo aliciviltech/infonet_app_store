@@ -34,7 +34,7 @@
     margin-left: 20px;
 }
 .ProgressBar .bar{
-    width: 300px;
+    width: 100%;
     height: 10px;
     border-radius: 10px;
     background-color: rgba(127, 127, 127, 0.47);
@@ -45,4 +45,14 @@
     width: 20%;
     height: 10px;
     border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .ProgressBar {
+        width: 90%;
+        /* margin: auto; */
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+    }
 }

@@ -5,12 +5,15 @@
     flex-direction: column;
     /* justify-content: center; */
     padding-top: 50px;
+    padding-bottom: 50px;
     gap: 70px;
     align-items: center;
     background-color: rgb(220, 209, 194);
 }
 .Home h1{
-    font-size: 35px;
+    font-size: 2.2rem;
+    padding: 0 10px;
+    text-align: center;
 }
 .Home h1 span{
     color:rgb(210, 3, 113) ;
@@ -46,4 +49,16 @@
     width: 80px;
     height: 80px;
     border-radius: 10px;
+}
+
+@media screen and (max-width:600px) {
+    .Home .allTags{
+        width: 95%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+    }
 }

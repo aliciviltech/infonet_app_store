@@ -31,15 +31,15 @@ const Calculator = () => {
                     {
                         calcButtons.map((btn, index) => {
                             if (btn.sign === '=') {
-                                return <button key={index} id={btn.function} onClick={() => { setAnswer(eval(input)); inputRef.current.focus(); }} >{btn.sign}</button>
+                                return <button key={index} id={btn.function} onClick={() => { setAnswer(eval(input)); }} >{btn.sign}</button>
                             }
                             if (btn.sign === 'AC') {
-                                return <button key={index} id={btn.function} onClick={() => { setAnswer(''); setInput(''); inputRef.current.focus(); }} >{btn.sign}</button>
+                                return <button key={index} id={btn.function} onClick={() => { setAnswer(''); setInput('');  }} >{btn.sign}</button>
                             }
                             if (btn.sign === 'Del') {
-                                return <button key={index} id={btn.function} onClick={() => { setInput(input.slice(0, -1)); inputRef.current.focus(); }} >{btn.sign}</button>
+                                return <button key={index} id={btn.function} onClick={() => { setInput(input.slice(0, -1)); }} >{btn.sign}</button>
                             }
-                            return <button key={index} id={btn.function} onClick={() => { setInput(input + btn.sign); inputRef.current.focus(); }} >{btn.sign}</button>
+                            return <button key={index} id={btn.function} onClick={() => { setInput(input + btn.sign); inputElement.setSelectionRange(inputRef.value.length, inputRef.value.length); }} >{btn.sign}</button>
                         })
                     }
                 </div>

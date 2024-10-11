@@ -1,25 +1,3 @@
-/* .Calendar{
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-}
-.monthContainer{
-    width: 90%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    border: 2px solid black;
-}
-.dateBox{
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-} */
-
 
 
 .calendar {
@@ -93,3 +71,20 @@
     background-color: transparent; /* Optional: Make empty days lighter */
   }
   
+  @media screen and (max-width:767px) {
+    .calendar {
+      width: 95%;
+    }
+    .calendar-day {
+      height: 50px;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .calendar-day-task i{
+      color: green;
+      position: absolute;
+      bottom: 2px;
+      right: 5px;
+      font-size: 12px;
+    }
+  }

@@ -57,3 +57,9 @@
     justify-content: flex-end;
     margin-top: 20px;
 }
+
+@media screen and (max-width:600px) {
+    .CalendarModal{
+        width: 95%;
+    }
+}

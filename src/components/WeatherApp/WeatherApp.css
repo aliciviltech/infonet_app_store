@@ -67,3 +67,15 @@
     font-weight: bold;
     width: fit-content;
 }
+
+@media screen and (max-width:429px) {
+    .WeatherApp{
+        background:linear-gradient(to right, rgb(78, 142, 190), rgb(34, 34, 34));
+    }
+    .WeatherApp .weatherAppCard{
+        width: 90%;
+    }
+    .WeatherApp .weatherAppCard .input{
+        width: 90%;
+    }
+}

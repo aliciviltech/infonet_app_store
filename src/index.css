@@ -6,10 +6,10 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
 
-  font-synthesis: none;
+  /* font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 *{
@@ -50,13 +50,14 @@ button {
     cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+
+
+button:active {
   background-color: rgb(0, 0, 0);
+  color: #fff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
+
 .tertiaryBtn{
   height: fit-content;
   border-radius: 4px;
