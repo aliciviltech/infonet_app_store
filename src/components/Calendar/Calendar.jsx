@@ -7,9 +7,8 @@ const Calendar = ({ toDoData }) => {
     const [showModal, setShowModal] = useState(false);
     const [modalDate, setModalDate] = useState('');
     const taskList = JSON.parse(localStorage.getItem('taskList')) || [];
-    const taskDate = new Date(taskList[2].dateInput);
-    console.log(taskList)
 
+    console.log(new Date('10-13-2024').getDay())
 
     const [currentDate, setCurrentDate] = useState(new Date());
     const [upToDate, setUpToDate] = useState({});
@@ -44,11 +43,12 @@ const Calendar = ({ toDoData }) => {
         // Create slots for each day in the month
         outerLoop: for (let day = 1; day <= daysInMonth; day++) {
             const thisDate = new Date(year, month,day) ;
+            console.log(thisDate, thisDate.getDay())
             for(let t=0; t<taskList.length; t++){
                 if(new Date(year, month,day).toLocaleDateString() === new Date(taskList[t].dateInput).toLocaleDateString()){
                     calendarDays.push(
-                        <div className="calendar-day calendar-day-task" key={day}
-                        style={{backgroundColor:`${thisDate.getDay()===0 && 'red'}`}}
+                        <div className={`calendar-day calendar-day-task ${thisDate.getDay()===0 ? 'sunday' : null}  `} key={day}
+                        // style={{backgroundColor:`${thisDate.getDay()===0 ? 'red' : 'transparent'}`}}
                             onClick={()=>{
                                 setShowModal(true);
                                 setModalDate(taskList[t].dateInput)
@@ -65,7 +65,7 @@ const Calendar = ({ toDoData }) => {
                 }
             }
             calendarDays.push(
-                <div className="calendar-day" key={day} style={{backgroundColor:`${thisDate.getDay()===0 && 'red'}`}}  > {day}</div>
+                <div className={`calendar-day ${thisDate.getDay()===0 ? 'sunday' : null}  `} key={day}   > {day}</div>
             );
         }
         return calendarDays;
