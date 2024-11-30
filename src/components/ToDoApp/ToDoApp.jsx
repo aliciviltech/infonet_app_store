@@ -109,9 +109,8 @@ const ToDoApp = ({ setToDoData }) => {
                     {index + 1}
                   </div>
                   <div className={`task`} >
-                    <p style={{ textDecoration: `${task.done ? "line-through" : "none"}` }} >{task.textInput}</p>
-                    <h5>{new Date(task.dateInput).toDateString()} - {new Date(task.dateInput).toLocaleTimeString()}</h5>
-                    <div className="progressBar">Progress Baar:  <ProgressBar key={index} /></div>
+                    <h4 style={{ textDecoration: `${task.done ? "line-through" : "none"}` }} >{task.textInput}</h4>
+                    <p>{new Date(task.dateInput).toDateString()} - {new Date(task.dateInput).toLocaleTimeString()}</p>
                     {/* ----- task controls ------- */}
                     <div className="controls">
                       <button className='tertiaryBtn' onClick={() => { deleteTaskF(index) }}>delete</button>

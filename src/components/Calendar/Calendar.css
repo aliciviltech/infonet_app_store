@@ -25,9 +25,7 @@
     text-decoration: underline;
     border: 1px solid #ccc;
   }
-  .calendar-header button:hover{
-    color: #ffffff;
-  }
+ 
   .day-names{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
