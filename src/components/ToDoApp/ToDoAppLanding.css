@@ -1,0 +1,68 @@
+
+.ToDoAppLanding{
+    max-height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+.ToDoAppLanding .leftCol{
+    width: 49%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ToDoAppLanding .leftCol img{
+    width: 60%;
+}
+.ToDoAppLanding .rightCol{
+    width: 49%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+@media screen and (max-width:1024px) {
+    .ToDoAppLanding{
+        flex-direction: column;
+    }
+    .ToDoAppLanding .leftCol{
+        width: 100%;
+        height: 60vh;
+    }
+    .ToDoAppLanding .leftCol img{
+        width: 50%;
+    }
+    .ToDoAppLanding .rightCol{
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        padding: 0;
+    }
+    .ToDoAppLanding .rightCol p{
+        width: 50%;
+    }
+
+}
+@media screen and (max-width:600px) {
+    .ToDoAppLanding{
+        flex-direction: column;
+    }
+    .ToDoAppLanding .leftCol{
+        width: 100%;
+        height: 60vh;
+    }
+    .ToDoAppLanding .leftCol img{
+        width: 70%;
+    }
+    .ToDoAppLanding .rightCol{
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        padding: 0;
+    }
+    .ToDoAppLanding .rightCol p{
+        width: 90%;
+    }
+
+}

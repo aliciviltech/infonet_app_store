@@ -1,0 +1,197 @@
+
+.CreateToDo{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #dfdddd;
+    /* background-color: rgb(240, 152, 115); */
+    background: linear-gradient(to right, var(--primaryColor), 70%, #f5dab5);
+}
+/* -------------- input area ------------- */
+.CreateToDo .inputArea{
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    /* background-color: var(--tertiaryColor); */
+    background-color: #ffffff88;
+    border-radius: 10px;
+}
+.CreateToDo .inputArea input{
+    font-size: 16px;
+    background-color: transparent;
+    height: 40px;
+    color: #000;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    outline: none;
+    background-color: #fff;
+}
+.CreateToDo .inputArea .dateInputContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.CreateToDo .inputArea .dateInputContainer img{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.CreateToDo .inputArea input[type='datetime-local']{
+    width: fit-content;
+    color: #000;
+    background-color: #918f8f;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+#addTaskBtn{
+    background-color: var(--primaryButtonColor);
+    color: #fff;
+}
+#updateBtn{
+    background-color: var(--primaryButtonColor);
+    display: none;
+    color: #fff;
+}
+#cancelBtn{
+    background-color: black;
+    display: none;
+    color: #fff;
+}
+
+/* -------------- task list ------------- */
+.CreateToDo .tasksContainer{
+    width: 900px;
+    /* background-color: var(--primaryColor); */
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.CreateToDo .tasksContainer .taskList{
+    width: 700px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.CreateToDo .tasksContainer .taskList .taskListTitle{
+    /* background-color: var(--primaryColor); */
+    text-align: center;
+}
+.CreateToDo .tasksContainer .taskList .item{
+    display: flex;
+    /* align-items: center; */
+    gap: 10px;
+    flex-wrap: wrap;
+    background-color: #ffffff83;
+    /* padding: 10px;
+    padding-top: 40px; */
+    border-radius: 10px;
+    position: relative;
+}
+.CreateToDo .tasksContainer .taskList .item .taskNumber{
+    background-color: var(--primaryButtonColor);
+    color: #fff;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0 0 10px;
+}
+.CreateToDo .tasksContainer .taskList .item .task{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+.CreateToDo .progressBar{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.CreateToDo .tasksContainer .taskList .item .controls{
+    display: flex;
+    gap: 20px;
+}
+.CreateToDo .tasksContainer .taskList .noTasksTitle{
+    text-align: center;
+    color: gray;
+}
+.deactivate{
+    opacity: 0.3;
+}
+.goToCalendarBtn{
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #fff;
+}
+.goToCalendarBtn img{
+    width: 30px;
+    border-radius: 7px
+}
+
+@media screen and (max-width:1023px) {
+    .CreateToDo .inputArea{
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .CreateToDo .tasksContainer{
+        width: 100%;
+    }
+    .CreateToDo .tasksContainer .taskList{
+        width: 100%;
+    }
+    .CreateToDo .tasksContainer .taskList .item .task{
+        width: 85%;
+    }
+}
+@media screen and (max-width:600px){
+    .CreateToDo .inputArea .dateInputContainer {
+        flex-direction: column;
+    }
+    .CreateToDo .inputArea .dateInputContainer img{
+        display: none;
+    }
+    .CreateToDo .tasksContainer {
+        padding-bottom: 60px;
+    }
+    .CreateToDo .tasksContainer .taskList .item .taskNumber{
+        /* height: 30px; */
+        width: 30px;
+        font-size: 12px;
+        
+    }
+    .goToCalendarBtn{
+        position: fixed;
+        bottom: 20px;
+        right: 0;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-left: auto;
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width:430px){
+    .CreateToDo .tasksContainer .taskList .item{
+        /* flex-direction: column; */
+        flex-wrap: nowrap;
+    }
+    .CreateToDo .tasksContainer .taskList .item .task{
+        width: 100%;
+    }
+}

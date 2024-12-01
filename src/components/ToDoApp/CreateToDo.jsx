@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react'
-import './ToDoApp.css'
+import './CreateToDo.css'
+import './ToDoAppGlobal.css'
 import { useNavigate } from 'react-router'
-import ProgressBar from '../ProgressBar/ProgressBar';
 
-const ToDoApp = ({ setToDoData }) => {
+const CreateToDo = ({ setToDoData }) => {
   const navigate = useNavigate();
   const inputRef = useRef(null)
   const dateInputRef = useRef(null)
@@ -23,8 +23,17 @@ const ToDoApp = ({ setToDoData }) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
   }
   const submitInputF = () => {
-    setTaskList([...taskList, inputs])
-    localStorage.setItem('taskList', JSON.stringify([...taskList, inputs]))
+    if(inputs.textInput.trim() !== ''){
+      setTaskList([...taskList, inputs])
+      localStorage.setItem('taskList', JSON.stringify([...taskList, inputs]))
+      setInputs({
+        textInput: '',
+        dateInput: '',
+        done: false,
+      })
+    }else{
+      alert('Enter a valid task')
+    }
   }
 
   // ---------------- task list ------------------
@@ -65,6 +74,7 @@ const ToDoApp = ({ setToDoData }) => {
       return task;
     })
     setTaskList(updatedTaskList);
+    localStorage.setItem('taskList', JSON.stringify(updatedTaskList));
   }
   // ----------- cancel task -------------
   const cancelUpdateF = () => {
@@ -79,10 +89,11 @@ const ToDoApp = ({ setToDoData }) => {
       return (i !== targetIndex)
     })
     setTaskList(updatedTaskList);
+    localStorage.setItem('taskList', JSON.stringify(updatedTaskList));
   }
 
   return (
-    <div className='ToDoApp'>
+    <div className='CreateToDo'>
 
       {/* ------------ input area ------------ */}
       <div className="inputArea">
@@ -100,7 +111,9 @@ const ToDoApp = ({ setToDoData }) => {
       {/* ------------ task list ------------- */}
       <div className="tasksContainer">
         <div className="taskList">
+          <h3 className='taskListTitle'>Task List</h3>
           {
+            taskList.length ?
             taskList.map((task, index) => {
               return (
                 // --------- item by item ------------
@@ -110,7 +123,15 @@ const ToDoApp = ({ setToDoData }) => {
                   </div>
                   <div className={`task`} >
                     <h4 style={{ textDecoration: `${task.done ? "line-through" : "none"}` }} >{task.textInput}</h4>
-                    <p>{new Date(task.dateInput).toDateString()} - {new Date(task.dateInput).toLocaleTimeString()}</p>
+                    <p> 
+                      <b>Due: </b> 
+                      {
+                        task.dateInput ==='' ?
+                        'No due date'
+                        :
+                        <span>{new Date(task.dateInput).toDateString()} - {new Date(task.dateInput).toLocaleTimeString()}</span>
+                      }
+                    </p>
                     {/* ----- task controls ------- */}
                     <div className="controls">
                       <button className='tertiaryBtn' onClick={() => { deleteTaskF(index) }}>delete</button>
@@ -121,6 +142,8 @@ const ToDoApp = ({ setToDoData }) => {
                 </div>
               )
             })
+            :
+            <h2 className='noTasksTitle'>No tasks entered.</h2>
           }
         </div>
       </div>
@@ -131,4 +154,4 @@ const ToDoApp = ({ setToDoData }) => {
   )
 }
 
-export default ToDoApp
+export default CreateToDo

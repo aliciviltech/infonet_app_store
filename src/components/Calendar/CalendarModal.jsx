@@ -35,7 +35,7 @@ const CalendarModal = ({ showModal, setShowModal, taskList, modalDate }) => {
                 </div>
                 <div className="buttons">
                     <button onClick={() => { setShowModal(false) }}>close</button>
-                    <button onClick={() => { navigate('/todo_app') }}>Open todo List</button>
+                    <button onClick={() => { navigate('/todo_app/createtodo') }}>Open todo List</button>
                 </div>
             </div>
         </div>

@@ -1,0 +1,154 @@
+
+.ToDoList{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #dfdddd;
+    /* background-color: rgb(240, 152, 115); */
+    background: linear-gradient(to right, var(--primaryColor), 70%, #f5dab5);
+}
+
+
+/* -------------- task list ------------- */
+.ToDoList .tasksContainer{
+    width: 900px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.ToDoList .tasksContainer .taskList{
+    width: 700px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.ToDoList .tasksContainer .taskList .taskListTitle{
+    /* background-color: var(--primaryColor); */
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ToDoList .tasksContainer .taskList .editList{
+    font-size: 14px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.ToDoList .tasksContainer .taskList .editList:hover{
+    color: red;
+}
+.ToDoList .tasksContainer .taskList .item{
+    display: flex;
+    /* align-items: center; */
+    gap: 10px;
+    flex-wrap: wrap;
+    background-color: #ffffff83;
+    /* padding: 10px;
+    padding-top: 40px; */
+    border-radius: 10px;
+    position: relative;
+}
+.ToDoList .tasksContainer .taskList .item .taskNumber{
+    background-color: var(--primaryButtonColor);
+    color: #fff;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0 0 10px;
+}
+.ToDoList .tasksContainer .taskList .item .task{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+.ToDoList .progressBar{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.ToDoList .tasksContainer .taskList .item .controls{
+    display: flex;
+    gap: 20px;
+}
+.ToDoList .tasksContainer .taskList .noTasksTitle{
+    text-align: center;
+    color: gray;
+}
+.deactivate{
+    opacity: 0.3;
+}
+.goToCalendarBtn{
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #fff;
+}
+.goToCalendarBtn img{
+    width: 30px;
+    border-radius: 7px
+}
+
+@media screen and (max-width:1023px) {
+    .ToDoList .inputArea{
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .ToDoList .tasksContainer{
+        width: 100%;
+    }
+    .ToDoList .tasksContainer .taskList{
+        width: 100%;
+    }
+    .ToDoList .tasksContainer .taskList .item .task{
+        width: 85%;
+    }
+}
+@media screen and (max-width:600px){
+    .ToDoList .inputArea .dateInputContainer {
+        flex-direction: column;
+    }
+    .ToDoList .inputArea .dateInputContainer img{
+        display: none;
+    }
+    .ToDoList .tasksContainer {
+        padding-bottom: 60px;
+    }
+    .ToDoList .tasksContainer .taskList .item .taskNumber{
+        /* height: 30px; */
+        width: 30px;
+        font-size: 12px;
+        
+    }
+    .goToCalendarBtn{
+        position: fixed;
+        bottom: 20px;
+        right: 0;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-left: auto;
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width:430px){
+    .ToDoList .tasksContainer .taskList .item{
+        /* flex-direction: column; */
+        flex-wrap: nowrap;
+    }
+    .ToDoList .tasksContainer .taskList .item .task{
+        width: 100%;
+    }
+}
